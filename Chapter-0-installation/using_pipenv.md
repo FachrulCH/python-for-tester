@@ -24,6 +24,8 @@ Creating a Pipfile for this project…
 
 ## Install depedencies
 
+If you going to use this repo depedencies just run `pipenv install`, but if you wanna try by yourself follow this:
+
 ```console
 python-for-tester on  master [⇡?] took 2s 
 ➜ pipenv install pytest  

@@ -10,6 +10,10 @@ pytest = "*"
 assertpy = "*"
 faker = "*"
 requests = "*"
+selenium = "*"
+appium-python-client = "*"
+pytest-xdist = "*"
+pytest-html = "*"
 
 [requires]
 python_version = "3.7"
