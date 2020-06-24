@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 pytest = "*"
+assertpy = "*"
+faker = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
