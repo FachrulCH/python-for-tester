@@ -52,6 +52,11 @@ def test_tupple():
 
     # using tuple, index start from 0
     print(num[2])
+    
+    # defined without bracket
+    selector = 'id', 3,
+    assert isinstance(selector, tuple)
+    print(selector)
 
 
 def test_list():
@@ -59,10 +64,16 @@ def test_list():
     Not hashable; mutable.
     """
     basket = ['apple', 'melon', 'durian']
-    print(basket[2])
+
+    print(basket[2])          # usage by using index
     basket.append('manggo')   # adding one element at the end
     print(basket)
     assert len(basket) == 4
+    basket.remove('melon')
+    assert len(basket) == 3
+    
+    for fruit in basket:
+        print("Name:", fruit)
 
 
 def test_set():
@@ -83,3 +94,9 @@ def test_dict():
     assert student.get('height') is 169
     student['name'] = 'Mas Fachrul'   # dict is mutable, it can be changed
     assert student['name'] is not 'Fachrul'
+
+    for key in student.keys():
+        print("this is the attributes :", key)
+    print("=== Info Student ===")
+    for key, val in student.items():
+        print(f"{key} : {val}")
