@@ -19,14 +19,14 @@ class TestSearching:
     def test_searching_golife(self):
         print("Test searching golife")
         self.DRIVER.get('https://google.co.id')
-        search_box = self.DRIVER.find_element_by_name('q')
+        search_box = self.DRIVER.find_element('name', 'q')
         search_box.send_keys('Golife'+ Keys.ENTER)
         time.sleep(3)
         print(self.DRIVER.title)
 
     def test_searching_gojek(self):
         self.DRIVER.get('https://google.co.id')
-        search_box = self.DRIVER.find_element_by_name('q')
+        search_box = self.DRIVER.find_element('name', 'q')
         search_box.send_keys('Gojek'+ Keys.ENTER)
         time.sleep(3)
         print(self.DRIVER.title)

@@ -6,8 +6,8 @@ def test_direct_usage():
     driver = webdriver.Chrome()
     driver.get("https://google.co.id")
     driver.implicitly_wait(10)
-    search_box = driver.find_element_by_name('q')
-    search_box.send_keys('Fachrul Choliluddin'+ Keys.ENTER)
+    search_box = driver.find_element('name', 'q')
+    search_box.send_keys('Fachrul Choliluddin' + Keys.ENTER)
     assert 'Fachrul Choliluddin' in driver.title
     driver.quit()
 
@@ -21,13 +21,13 @@ def test_searching():
     driver = webdriver.Chrome()
     driver.implicitly_wait(10)
     driver.get('https://google.co.id')
-    search_box = driver.find_element_by_name('q')
-    search_box.send_keys('fachrul choliluddin'+ Keys.ENTER)
-    results_title = driver.find_elements_by_css_selector('h3')
+    search_box = driver.find_element('name', 'q')
+    search_box.send_keys('fachrul choliluddin' + Keys.ENTER)
+    results_title = driver.find_elements("css selector", 'h3')
     results = [title.text for title in results_title]
     print(results)
     expected_link = "Celotehan si FachrulCH"
     matches = [text for text in results if expected_link.lower() in text.lower()]
     print(matches)
-    assert len(matches) > 0
+    assert len(matches) > 0, "No result found"
     driver.quit()

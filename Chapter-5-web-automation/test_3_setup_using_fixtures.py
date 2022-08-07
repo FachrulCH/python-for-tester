@@ -16,12 +16,12 @@ def driver():
 class TestWebFixtures():
     def test_search_golife(self, driver: webdriver.Remote):
         driver.get('https://google.co.id')
-        driver.find_element_by_name('q').send_keys('Golife' +Keys.ENTER)
+        driver.find_element('name', 'q').send_keys('Golife' +Keys.ENTER)
         time.sleep(3)
         assert driver.title == 'Golife - Penelusuran Google'
 
     def test_search_gojek(self, driver: webdriver.Remote):
         driver.get('https://google.co.id')
-        driver.find_element_by_name('q').send_keys('Gojek'+Keys.ENTER)
+        driver.find_element('name', 'q').send_keys('Gojek'+Keys.ENTER)
         time.sleep(3)
         assert 'Gojek' in driver.title
